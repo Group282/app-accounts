@@ -2,7 +2,6 @@ import React from "react";
 import {Container, Nav, Button} from 'react-bootstrap'
 import {Link} from "react-router-dom";
 
-
 const Menu = () => {
   return (
     <div className="menu bg-black">
@@ -11,7 +10,7 @@ const Menu = () => {
           <Nav.Item>
             <Nav.Link>
               <Button variant="success">
-                <Link to="/list" style={{textDecoration: 'none', color: 'white'}}>List</Link>
+                <Link to="/" style={{textDecoration: 'none', color: 'white'}}>List</Link>
               </Button>
             </Nav.Link>
           </Nav.Item>

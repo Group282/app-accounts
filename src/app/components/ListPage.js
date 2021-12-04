@@ -1,4 +1,4 @@
-import {addUser, deleteUser, getAllUsers} from "../../common/usersAPI";
+import {deleteUser, getAllUsers} from "../common/usersAPI";
 import React, {useEffect, useState} from "react";
 import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
@@ -10,8 +10,8 @@ import Alert from "react-bootstrap/Alert";
 import Badge from "react-bootstrap/Badge";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
-import AddUser from "./AddUser";
-import EditUser from "./EditUser";
+import AddUser from "./sections/AddUser";
+import EditUser from "./sections/EditUser";
 
 
 const ListPage = () => {

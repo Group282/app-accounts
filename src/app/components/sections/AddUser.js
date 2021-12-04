@@ -1,11 +1,10 @@
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import {Button} from "react-bootstrap";
 import React, {useEffect, useState} from "react";
-import {addUser, getOneUser, updateUser} from "../../common/usersAPI";
+import {addUser} from "../../common/usersAPI";
 
-const EditUser = ({fun, id}) => {
+const AddUser = ({fun}) => {
     const [name, setName] = useState('');
     const [accountName, setAccountName] = useState('');
     const [status, setStatus] = useState('');
@@ -14,17 +13,12 @@ const EditUser = ({fun, id}) => {
     const [expirationDate, setExpirationDate] = useState('');
 
 
-    useEffect(async () => {
-        let user = await getOneUser(id)
-        let start_date_user = new Date(Number.parseInt(user.start_date) * 1000)
-        let expiration_date_user = new Date(Number.parseInt(user.start_date) * 1000)
-
-        setStartDate(start_date_user.toISOString().split('T')[0])
-        setExpirationDate(expiration_date_user.toISOString().split('T')[0])
-        setName(user.name)
-        setAccountName(user.account_name)
-        setEmail(user.email)
-        setStatus(user.status)
+    useEffect(() => {
+        let date = new Date()
+        let date2 = new Date(date)
+        date2.setDate(date.getDate() + 1)
+        setStartDate(date.toISOString().split('T')[0])
+        setExpirationDate(date2.toISOString().split('T')[0])
     }, [])
 
 
@@ -35,8 +29,7 @@ const EditUser = ({fun, id}) => {
             expirationDate >= startDate) {
             let _startDate = new Date(startDate)
             let _expirationDate = new Date(expirationDate)
-            await updateUser(
-                id,
+            await addUser(
                 name,
                 accountName,
                 email,
@@ -120,4 +113,4 @@ const EditUser = ({fun, id}) => {
     )
 }
 
-export default EditUser
+export default AddUser
