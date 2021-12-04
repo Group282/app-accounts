@@ -260,15 +260,6 @@
       "status": "Active",
       "start_date": "1524317842",
       "expiration_date": "1523019378"
-    },
-    {
-      "id": 30,
-      "name": "Dimas",
-      "account_name": "dima1111",
-      "email": "virsta@gmail.com",
-      "status": "Active",
-      "start_date": 1638576000,
-      "expiration_date": 1638576000
     }
   ]
 }
