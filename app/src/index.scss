@@ -1,0 +1,84 @@
+@import 'normalize.css';
+@import './styles/colors';
+@import './styles/default';
+@import './styles/mediaQueries';
+
+* { 
+  box-sizing: border-box;
+  font-size: $default-font-size;
+  transition: all 1s ease;
+}
+
+body {
+  color: $app-font;
+  background-color: $app-bg;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  h1 {
+    font-size: $default-h1-size;
+  }
+  h2 {
+    font-size: $default-h2-size;
+  }
+  h3 {
+    font-size: $default-h3-size;
+  }
+  h4 {
+    font-size: $default-h4-size;
+  }
+  h5 {
+    font-size: $default-h5-size;
+  }
+  h6 {
+    font-size: $default-h6-size;
+  }
+
+  ul, li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  button {
+    &, &:active, &:visited, &:hover, &:focus {
+      border: 0;
+      outline: none;
+    }
+  }
+
+  button, 
+  .btn {
+    background-color: $primary;
+    padding: 8px;
+    margin: 5px;
+    border-radius: 3px;
+    font-weight: bold;
+    &.create {
+      color: $btn-font-light;
+      background-color: $primary;
+    }
+    &.edit {
+      color: $btn-font-light;
+      background-color: $secondary;
+    }
+    &.delete {
+      color: $btn-font-light;
+      background-color: $tertiary;
+    }
+  }
+
+  .container {
+    margin: 0 auto;
+  }
+}
+

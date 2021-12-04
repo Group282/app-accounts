@@ -1,0 +1,33 @@
+@import '../../styles/colors';
+
+.accountsTable {
+  width: 100%;
+  border-collapse: collapse;
+  thead tr {
+    border-bottom: 2px solid $tertiary;
+    
+    th {
+      text-align: left;
+      padding-bottom: 20px;
+    }
+  }
+
+  tbody tr {
+    height: fit-content;
+    border-bottom: 1px solid $tertiary;
+
+    td {
+      padding: 20px 0;
+      &.tl{
+        text-align: left;
+      }
+      &.tr{
+        text-align: right;
+      }
+      &.link:hover{
+        color: $accent;
+        transition: color 0.1s ease;
+      }
+    }
+  }
+}

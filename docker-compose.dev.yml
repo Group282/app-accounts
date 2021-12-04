@@ -1,0 +1,21 @@
+version: "3.9"
+services:
+  app:
+    build: ./app
+    environment: 
+      - NODE_ENV=development
+    volumes:
+      - ./app/src:/app/src
+    container_name: app
+    ports:
+      - '4200:4200'
+    depends_on:
+      - db
+    command: npm start
+  db:
+    build: ./db 
+    container_name: db
+    restart: always
+    ports: 
+      - "3000:3000"
+    command: json-server --watch ./db.accounts.json --host=0.0.0.0 --port 3000

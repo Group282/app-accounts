@@ -1,0 +1,25 @@
+@import '../../styles/colors';
+
+.badge {
+  padding: 5px;
+  margin: 3px;
+  border-radius: 3px;
+  font-weight: bold;
+  text-align: center;
+  width: fit-content;
+
+  &.active {
+    background-color: $status-active-bg;
+    color: $status-active-font;
+  }
+
+  &.disable {
+    background-color: $status-disable-bg;
+    color: $status-pending-font;
+  }
+
+  &.pending {
+    background-color: $status-pending-bg;
+    color: $status-disable-font;
+  }
+}
