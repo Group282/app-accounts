@@ -21,11 +21,11 @@ const ListPage = () => {
 
     const upData = async () => {
         let users = await getAllUsers()
-        for await (let item of users) {
-            let start_date = new Date(Number.parseInt(item.start_date) * 1000)
-            item['start_date'] = start_date.toLocaleDateString()
-            let expiration_date = new Date(Number.parseInt(item.expiration_date) * 1000)
-            item['expiration_date'] = expiration_date.toLocaleDateString()
+        for (let i = 0, len = users.length; i < len; i++) {
+            let start_date = new Date(Number.parseInt(users[i].start_date) * 1000)
+            users[i]['start_date'] = start_date.toLocaleDateString()
+            let expiration_date = new Date(Number.parseInt(users[i].expiration_date) * 1000)
+            users[i]['expiration_date'] = expiration_date.toLocaleDateString()
         }
         setAllUser(users.reverse());
     }

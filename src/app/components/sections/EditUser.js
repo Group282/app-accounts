@@ -35,14 +35,15 @@ const EditUser = ({fun, id}) => {
             let _startDate = new Date(startDate)
             let _expirationDate = new Date(expirationDate)
             await updateUser(
-                id,
-                name,
-                accountName,
-                email,
-                status,
-                (_startDate.getTime() / 1000),
-                (_expirationDate.getTime() / 1000)
-            )
+                {
+                    id: id,
+                    name: name,
+                    accountName: accountName,
+                    email: email,
+                    status: status,
+                    startDate: (_startDate.getTime() / 1000),
+                    expirationDate: (_expirationDate.getTime() / 1000)
+                })
             await fun()
         }
     }
@@ -73,8 +74,10 @@ const EditUser = ({fun, id}) => {
                 />
                 <label htmlFor="account_name_input">Account Name*</label>
             </Form.Floating>
-            <Form.Select className="mb-3" value={status} onChange={(e) => setStatus(e.target.value)}>
-                <option value="Active" selected>Active</option>
+            <Form.Select className="mb-3"
+                         value={status}
+                         onChange={(e) => setStatus(e.target.value)}>
+                <option value="Active">Active</option>
                 <option value="Pending">Pending</option>
                 <option value="Disable">Disable</option>
             </Form.Select>
