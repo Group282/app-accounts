@@ -2,7 +2,7 @@
     <b-container class="mt-3">
       <b-row>
         <b-col>
-          About
+          In development
         </b-col>
       </b-row>
     </b-container>

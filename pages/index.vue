@@ -53,7 +53,7 @@
             </template>
             <template v-else>
               <b-td class="align-middle" data-ceil="name">
-                <b-link :href="'/profile/' + account.id">{{ account.name }}</b-link>
+                <b-link class="text-dark" :to="'/profile/' + account.id">{{ account.name }}</b-link>
               </b-td>
               <b-td class="align-middle" data-ceil="account_name">{{ account.account_name }}</b-td>
               <b-td class="align-middle" data-ceil="email">{{ account.email }}</b-td>
@@ -274,11 +274,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss" module>
-.table {
-  [data-ceil] {
-
-  }
-}
-</style>
